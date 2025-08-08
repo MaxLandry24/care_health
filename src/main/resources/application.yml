@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: Care_Health
+  datasource:
+    url: jdbc:mysql://localhost:3306/Care_Health?createDatabaseIfNotExist=true&useSSL=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+
+#logging:
+#  level:
+#    com.zaxxer.hikari.HikariConfig: DEBUG
+server:
+  port: 8085
+
+jwt:
+  secret-key: 166c3b0331d5da2212398f7b34e6b9025e39f1cef2cf206739db8da7cbbaad52c25844e52b301f1ae5bf8b5f5eaaf49f
+  expiration: 86400000
+

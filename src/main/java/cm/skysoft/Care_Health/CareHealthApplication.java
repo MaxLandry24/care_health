@@ -97,19 +97,25 @@ public class CareHealthApplication implements CommandLineRunner {
 	}
 
 //	@Bean
-	public CommandLineRunner commandLineRunner(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
+	public CommandLineRunner test(UserRepository userRepository, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
 		return args -> {
-			UserDomain user = UserDomain.builder()
-					.username("test@test.com")
-					.enabled(true)
-					.roles(
-							Set.of("ROLE_USER","ROLE_ADMIN").stream().map(roleName -> {
-								Role role = new Role(null, roleName);
-								return roleRepository.save(role);
-							}).collect(Collectors.toSet()))
-					.password(passwordEncoder.encode("1234"))
-					.build();
-			userRepository.save(user);
+
+			Optional<UserDomain> userDomain = userRepository.findByUsername("admin@gmail.com");
+
+//			if (userDomain.isEmpty()){
+				UserDomain user = UserDomain.builder()
+						.username("admin@gmail.com")
+						.enabled(true)
+						.roles(
+								Set.of("ROLE_SUPER_ADMIN").stream().map(roleName -> {
+									Role role = new Role(null, roleName);
+									return roleRepository.save(role);
+								}).collect(Collectors.toSet()))
+						.password(passwordEncoder.encode("1234"))
+						.build();
+				userRepository.save(user);
+//			}
+
 		};
 	}
 }

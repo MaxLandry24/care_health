@@ -22,9 +22,9 @@ spring:
 #  level:
 #    com.zaxxer.hikari.HikariConfig: DEBUG
 server:
-  port: 8085
+  port: 8086
 
 jwt:
-  secret-key: 166c3b0331d5da2212398f7b34e6b9025e39f1cef2cf206739db8da7cbbaad52c25844e52b301f1ae5bf8b5f5eaaf49f
+  secret-key: 165c3b0331d5da2212398f7b34e6b9025e39f1cef2cf206739db8da7cbbaad52c25844e52b301f1ae5bf8b5f5eaaf49f
   expiration: 86400000
 

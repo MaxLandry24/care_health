@@ -1,6 +1,5 @@
 package cm.skysoft.Care_Health.Service.Impl;
 
-import cm.skysoft.Care_Health.Dao.UserRepository;
 import cm.skysoft.Care_Health.Dto.AuthResponse;
 import cm.skysoft.Care_Health.Service.UserService;
 import cm.skysoft.Care_Health.security.JwtTokenService;
@@ -33,9 +32,7 @@ public class UserServiceImpl implements UserService {
         }
         catch (Exception e) {
             log.error("Tentative de connexion echouée : " + e.getMessage());
-            throw new RuntimeException("Email ou mot de passe incorrect");
+            throw new RuntimeException("Email 55555555ou mot de passe incorrect");
         }
-
-
     }
 }

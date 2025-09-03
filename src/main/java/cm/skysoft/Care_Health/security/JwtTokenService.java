@@ -23,14 +23,12 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-@RequiredArgsConstructor
 public class JwtTokenService {
 
     @Value("${jwt.expiration}")
     private long jwtValidityInMs;
     @Value("${jwt.secret-key}")
     private String secret;
-    private final UserRepository userRepository;
 
     private Key getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secret);

@@ -1,6 +1,5 @@
 package cm.skysoft.Care_Health.Exception;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.List;

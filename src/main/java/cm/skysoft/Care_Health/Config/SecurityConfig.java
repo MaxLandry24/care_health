@@ -61,8 +61,7 @@ public class SecurityConfig {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(authorizeRequests -> {
-                    authorizeRequests.requestMatchers("/auth/login").permitAll();
-                    authorizeRequests.requestMatchers("/medicaments/**").hasAuthority("ADMIN");
+                    authorizeRequests.requestMatchers("/auth/login", "/swagger-ui/**", "/v3/api-docs/**").permitAll();
                     authorizeRequests.anyRequest().authenticated();
 //                    authorizeRequests.anyRequest().permitAll();
                 })

@@ -55,6 +55,17 @@
 			<version>2.1.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-annotations</artifactId>
+			<version>1.5.14</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+
 		<!-- JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -176,7 +187,8 @@
 						<apiSource>
 							<springmvc>true</springmvc>
 							<locations>
-								<location>cm.skysoft.Care_Health.web.api.*</location>
+								<location>cm.skysoft.Care_Health.Controller.AuthApi</location>
+								<location>cm.skysoft.Care_Health.Controller.MedicamentApi</location>
 							</locations>
 							<basePath>http://localhost:8086</basePath>
 							<info>
@@ -196,6 +208,24 @@
 						</apiSource>
 					</apiSources>
 				</configuration>
+				<dependencies>
+					<!-- Ajout des dépendances JAXB pour Java 9+ -->
+					<dependency>
+						<groupId>javax.xml.bind</groupId>
+						<artifactId>jaxb-api</artifactId>
+						<version>2.3.1</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-core</artifactId>
+						<version>2.3.0.1</version>
+					</dependency>
+					<dependency>
+						<groupId>com.sun.xml.bind</groupId>
+						<artifactId>jaxb-impl</artifactId>
+						<version>2.3.5</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<phase>install</phase>

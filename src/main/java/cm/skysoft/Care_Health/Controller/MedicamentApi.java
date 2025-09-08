@@ -2,11 +2,15 @@ package cm.skysoft.Care_Health.Controller;
 
 import cm.skysoft.Care_Health.Dto.MedicamentDTO;
 import cm.skysoft.Care_Health.Exception.NonValidEntity;
+import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name= "Medicament API")
+@Api("Medicament API")
 @RequestMapping(value = "/medicaments")
 public interface MedicamentApi {
 
